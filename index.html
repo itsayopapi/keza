@@ -129,9 +129,10 @@
             --accent: #8a9a5b;      /* Olive Green */
             --light: #f8f7f2;       /* Cream White */
             --dark: #1a2c24;        /* Dark Forest */
-            --text: #3a3a3a;        /* Soft Black */
+            --text: #ffffff;        /* CHANGED TO WHITE */
+            --text-dark: #3a3a3a;   /* Soft Black for non-white backgrounds */
             --white: #ffffff;
-            --gray: #7d8c7d;
+            --gray: #e0e0e0;        /* Lighter gray for better contrast */
             --nav-bg: rgba(42, 92, 58, 0.95); /* Navbar background */
             --nav-text: #ffffff;
             --transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
@@ -156,7 +157,7 @@
             font-family: 'Inter', sans-serif;
             color: var(--text);
             line-height: 1.7;
-            background: linear-gradient(135deg, #f8f7f2 0%, #f0eee6 50%, #e8e4d9 100%);
+            background: linear-gradient(135deg, #0f2d1c 0%, #1a3d2c 50%, #2a5c3a 100%);
             background-attachment: fixed;
             overflow-x: hidden;
             opacity: 0;
@@ -173,13 +174,14 @@
             font-family: 'Playfair Display', serif;
             font-weight: 600;
             line-height: 1.2;
+            color: var(--white);
         }
 
         /* Improve text readability for SEO */
         p, li, span {
             font-size: 16px;
             line-height: 1.6;
-            color: white(--text);
+            color: var(--text);
         }
 
         /* Nature Elements */
@@ -272,7 +274,7 @@
             margin-bottom: 20px;
             position: relative;
             display: inline-block;
-            color: var(--primary);
+            color: var(--white);
         }
 
         .section-title h2:after {
@@ -293,8 +295,8 @@
             margin: 0 auto;
         }
 
-        /* Video Carousel - Optimized */
-        .video-carousel {
+        /* Image Carousel - Optimized */
+        .image-carousel {
             position: relative;
             height: 90vh;
             min-height: 700px;
@@ -303,7 +305,7 @@
             box-shadow: 0 20px 40px rgba(42, 92, 58, 0.1);
         }
 
-        .video-slide {
+        .image-slide {
             position: absolute;
             top: 0;
             left: 0;
@@ -313,24 +315,24 @@
             transition: opacity 1.5s ease;
         }
 
-        .video-slide.active {
+        .image-slide.active {
             opacity: 1;
         }
 
-        .video-slide video {
+        .image-slide img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: brightness(0.9);
+            filter: brightness(0.7);
         }
 
-        .video-overlay {
+        .image-overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, rgba(42, 92, 58, 0.6), rgba(212, 165, 94, 0.4));
+            background: linear-gradient(45deg, rgba(42, 92, 58, 0.8), rgba(212, 165, 94, 0.5));
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -340,13 +342,13 @@
             padding: 0 20px;
         }
 
-        .video-overlay h1 {
+        .image-overlay h1 {
             font-size: 64px;
             margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
-        .video-overlay p {
+        .image-overlay p {
             font-size: 20px;
             max-width: 700px;
             margin-bottom: 40px;
@@ -697,7 +699,7 @@
         /* Trust Indicators */
         .trust-indicators {
             padding: 80px 0;
-            background: var(--white);
+            background: rgba(42, 92, 58, 0.2);
             position: relative;
             overflow: hidden;
             border-bottom: 1px solid rgba(138, 154, 91, 0.1);
@@ -717,6 +719,7 @@
             min-width: 200px;
             position: relative;
             transition: var(--transition);
+            color: var(--white);
         }
 
         .indicator:hover {
@@ -737,7 +740,7 @@
         .indicator h3 {
             font-size: 20px;
             margin-bottom: 10px;
-            color: var(--primary);
+            color: var(--white);
         }
 
         .indicator p {
@@ -747,7 +750,7 @@
 
         /* Shipping Section */
         .shipping-section {
-            background: linear-gradient(135deg, var(--light) 0%, rgba(212, 165, 94, 0.1) 100%);
+            background: linear-gradient(135deg, rgba(42, 92, 58, 0.2) 0%, rgba(212, 165, 94, 0.1) 100%);
             padding: 100px 0;
             position: relative;
             overflow: hidden;
@@ -760,7 +763,7 @@
         }
 
         .shipping-card {
-            background: var(--white);
+            background: rgba(255, 255, 255, 0.1);
             border-radius: var(--border-radius);
             padding: 50px 30px;
             text-align: center;
@@ -768,17 +771,20 @@
             box-shadow: var(--box-shadow);
             position: relative;
             overflow: hidden;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .shipping-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 30px 60px rgba(42, 92, 58, 0.15);
+            box-shadow: 0 30px 60px rgba(42, 92, 58, 0.3);
+            background: rgba(255, 255, 255, 0.15);
         }
 
         .shipping-icon {
             width: 80px;
             height: 80px;
-            background: var(--light);
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -811,11 +817,11 @@
         .shipping-card h3 {
             font-size: 24px;
             margin-bottom: 20px;
-            color: var(--primary);
+            color: var(--white);
         }
 
         .shipping-card p {
-            color: var(--text);
+            color: var(--gray);
             margin-bottom: 20px;
         }
 
@@ -832,9 +838,9 @@
             color: var(--secondary);
         }
 
-        /* Benefits */
+        /* Benefits with Video Carousel */
         .benefits {
-            background: var(--white);
+            background: rgba(26, 44, 36, 0.5);
             position: relative;
             overflow: hidden;
         }
@@ -864,6 +870,7 @@
             border-radius: var(--border-radius);
             overflow: hidden;
             box-shadow: var(--box-shadow);
+            position: relative;
         }
 
         .benefit-image img, .benefit-image video {
@@ -877,6 +884,57 @@
             transform: scale(1.05);
         }
 
+        .benefit-video-carousel {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .benefit-video-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1.5s ease;
+        }
+
+        .benefit-video-slide.active {
+            opacity: 1;
+        }
+
+        .benefit-video-slide video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.9);
+        }
+
+        .benefit-video-dots {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 2;
+        }
+
+        .benefit-video-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .benefit-video-dot.active {
+            background: var(--white);
+            transform: scale(1.3);
+        }
+
         .benefit-content {
             flex: 1;
         }
@@ -884,11 +942,11 @@
         .benefit-content h3 {
             font-size: 32px;
             margin-bottom: 20px;
-            color: var(--primary);
+            color: var(--white);
         }
 
         .benefit-content p {
-            color: var(--text);
+            color: var(--gray);
             margin-bottom: 25px;
             font-size: 17px;
         }
@@ -917,9 +975,9 @@
             letter-spacing: 1px;
         }
 
-        /* Product Gallery */
+        /* Enhanced Product Gallery with Full Modal */
         .products {
-            background: var(--light);
+            background: rgba(42, 92, 58, 0.2);
             position: relative;
         }
 
@@ -932,18 +990,21 @@
         }
 
         .gallery-item {
-            background: var(--white);
+            background: rgba(255, 255, 255, 0.1);
             border-radius: var(--border-radius);
             overflow: hidden;
             box-shadow: var(--box-shadow);
             transition: var(--transition);
             position: relative;
             cursor: pointer;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .gallery-item:hover {
             transform: translateY(-15px);
-            box-shadow: 0 30px 60px rgba(42, 92, 58, 0.15);
+            box-shadow: 0 30px 60px rgba(42, 92, 58, 0.3);
+            background: rgba(255, 255, 255, 0.15);
         }
 
         .gallery-main {
@@ -963,7 +1024,7 @@
             display: flex;
             padding: 20px;
             gap: 10px;
-            background: var(--light);
+            background: rgba(255, 255, 255, 0.05);
         }
 
         .thumbnail {
@@ -1008,7 +1069,7 @@
         .product-title {
             font-size: 32px;
             margin-bottom: 15px;
-            color: var(--primary);
+            color: var(--white);
         }
 
         .product-description {
@@ -1025,13 +1086,14 @@
         }
 
         .feature-tag {
-            background: var(--light);
+            background: rgba(212, 165, 94, 0.2);
             color: var(--secondary);
             padding: 8px 16px;
             border-radius: 20px;
             font-size: 12px;
             font-weight: 600;
             letter-spacing: 1px;
+            border: 1px solid rgba(212, 165, 94, 0.3);
         }
 
         .product-price {
@@ -1050,7 +1112,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            background: var(--light);
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 8px;
             padding: 0 15px;
         }
@@ -1058,7 +1120,7 @@
         .quantity-btn {
             background: none;
             border: none;
-            color: var(--primary);
+            color: var(--white);
             font-size: 18px;
             cursor: pointer;
             padding: 5px;
@@ -1075,7 +1137,7 @@
             background: none;
             border: none;
             font-size: 16px;
-            color: var(--primary);
+            color: var(--white);
         }
 
         .gallery-expand {
@@ -1084,7 +1146,7 @@
             right: 20px;
             width: 40px;
             height: 40px;
-            background: var(--white);
+            background: rgba(255, 255, 255, 0.9);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -1102,14 +1164,14 @@
             transform: rotate(90deg);
         }
 
-        /* Modal for Gallery */
+        /* Enhanced Modal for Gallery */
         .gallery-modal {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(26, 44, 36, 0.95);
+            background: rgba(26, 44, 36, 0.98);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -1127,14 +1189,15 @@
 
         .modal-content {
             width: 90%;
-            max-width: 1000px;
+            max-width: 1200px;
             max-height: 90vh;
             overflow-y: auto;
-            background: var(--white);
+            background: linear-gradient(135deg, rgba(42, 92, 58, 0.9), rgba(26, 44, 36, 0.9));
             border-radius: var(--border-radius);
             position: relative;
             transform: translateY(50px);
             transition: transform 0.5s ease;
+            border: 1px solid rgba(212, 165, 94, 0.3);
         }
 
         .gallery-modal.active .modal-content {
@@ -1162,17 +1225,89 @@
             transform: rotate(90deg);
         }
 
-        .modal-media {
+        .modal-media-gallery {
             width: 100%;
             height: 500px;
+            position: relative;
             overflow: hidden;
             border-radius: var(--border-radius) var(--border-radius) 0 0;
         }
 
-        .modal-media img, .modal-media video {
+        .modal-gallery-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        .modal-gallery-slide.active {
+            opacity: 1;
+        }
+
+        .modal-gallery-slide img,
+        .modal-gallery-slide video {
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+
+        .modal-gallery-dots {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 2;
+        }
+
+        .modal-gallery-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .modal-gallery-dot.active {
+            background: var(--secondary);
+            transform: scale(1.3);
+        }
+
+        .modal-gallery-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--white);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            transition: var(--transition);
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-gallery-nav:hover {
+            background: var(--secondary);
+        }
+
+        .modal-gallery-prev {
+            left: 20px;
+        }
+
+        .modal-gallery-next {
+            right: 20px;
         }
 
         .modal-info {
@@ -1182,11 +1317,11 @@
         .modal-title {
             font-size: 36px;
             margin-bottom: 20px;
-            color: var(--primary);
+            color: var(--white);
         }
 
         .modal-description {
-            color: var(--text);
+            color: var(--gray);
             margin-bottom: 30px;
             font-size: 18px;
             line-height: 1.8;
@@ -1203,11 +1338,18 @@
             display: flex;
             align-items: center;
             gap: 15px;
+            color: var(--gray);
         }
 
         .modal-feature i {
             color: var(--secondary);
             font-size: 20px;
+        }
+
+        .modal-product-actions {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
         }
 
         /* Nature Section */
@@ -1254,7 +1396,7 @@
 
         /* Testimonials */
         .testimonials {
-            background: var(--white);
+            background: rgba(42, 92, 58, 0.2);
             position: relative;
         }
 
@@ -1265,20 +1407,23 @@
         }
 
         .testimonial-card {
-            background: var(--light);
+            background: rgba(255, 255, 255, 0.1);
             border-radius: var(--border-radius);
             padding: 40px;
             transition: var(--transition);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .testimonial-card:hover {
             transform: translateY(-10px);
             box-shadow: var(--box-shadow);
+            background: rgba(255, 255, 255, 0.15);
         }
 
         .testimonial-text {
             font-style: italic;
-            color: var(--text);
+            color: var(--gray);
             margin-bottom: 30px;
             position: relative;
             line-height: 1.8;
@@ -1313,7 +1458,7 @@
         }
 
         .author-info h4 {
-            color: var(--primary);
+            color: var(--white);
             margin-bottom: 5px;
         }
 
@@ -1444,6 +1589,7 @@
             margin-bottom: 30px;
             position: relative;
             padding-bottom: 15px;
+            color: var(--white);
         }
 
         .footer-widget h3:after {
@@ -1520,7 +1666,7 @@
                 grid-template-columns: 1fr 1fr;
             }
             
-            .video-overlay h1 {
+            .image-overlay h1 {
                 font-size: 48px;
             }
             
@@ -1579,11 +1725,11 @@
             }
             
             /* Adjust content for mobile */
-            .video-overlay h1 {
+            .image-overlay h1 {
                 font-size: 36px;
             }
             
-            .video-overlay p {
+            .image-overlay p {
                 font-size: 16px;
             }
             
@@ -1632,7 +1778,7 @@
                 flex-direction: column;
             }
             
-            .video-carousel {
+            .image-carousel {
                 height: 70vh;
                 min-height: 500px;
             }
@@ -1780,60 +1926,48 @@
         </nav>
     </header>
 
-    <!-- Video Carousel with Lazy Loading -->
-    <section class="video-carousel" id="home">
-        <div class="video-slide active">
-            <!-- Optimized video with preload metadata -->
-            <video autoplay muted loop playsinline preload="metadata">
-                <source src="./img/bg-video-1.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="video-overlay">
-                <h1>Nature's Healing Touch</h1>
-                <p>Pure African shea butter, sustainably harvested and handcrafted into transformative skincare that honors both body and earth</p>
-                <a href="#products" class="btn">Shop Collection</a>
-            </div>
+   <!-- Image Carousel with Lazy Loading -->
+<section class="image-carousel" id="home">
+    <div class="image-slide active">
+        <!-- Optimized image with loading="lazy" -->
+        <img src="./img/bg-img-1.jpg" alt="Nature's Healing Touch - African shea butter being harvested" loading="lazy">
+        <div class="image-overlay">
+            <h1>Nature's Healing Touch</h1>
+            <p>Pure African shea butter, sustainably harvested and handcrafted into transformative skincare that honors both body and earth</p>
+            <a href="#products" class="btn">Shop Collection</a>
         </div>
-        <div class="video-slide">
-            <video autoplay muted loop playsinline preload="metadata">
-                <source src="./img/bg-video-2.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="video-overlay">
-                <h1>From Earth to Skin</h1>
-                <p>Journey with us from the wild African shea trees to your daily ritual. Every jar tells a story of nature's generosity.</p>
-                <a href="#benefits" class="btn">Discover Benefits</a>
-            </div>
+    </div>
+    <div class="image-slide">
+        <img src="./img/bg-img-2.jpg" alt="From Earth to Skin - Shea butter production process" loading="lazy">
+        <div class="image-overlay">
+            <h1>From Earth to Skin</h1>
+            <p>Journey with us from the wild African shea trees to your daily ritual. Every jar tells a story of nature's generosity.</p>
+            <a href="#benefits" class="btn">Discover Benefits</a>
         </div>
-        <div class="video-slide">
-            <video autoplay muted loop playsinline preload="metadata">
-                <source src="https://assets.mixkit.co/videos/preview/mixkit-hands-of-a-woman-making-a-soap-28201-large.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="video-overlay">
-                <h1>Handcrafted with Intention</h1>
-                <p>Each bar of soap is mindfully created, infused with natural oils and the wisdom of traditional methods.</p>
-                <a href="#products" class="btn">Explore Soaps</a>
-            </div>
+    </div>
+    <div class="image-slide">
+        <img src="./img/bg-img-3.jpg" alt="Handcrafted with Intention - Woman making natural soap" loading="lazy">
+        <div class="image-overlay">
+            <h1>Handcrafted with Intention</h1>
+            <p>Each bar of soap is mindfully created, infused with natural oils and the wisdom of traditional methods.</p>
+            <a href="#products" class="btn">Explore Soaps</a>
         </div>
-        <div class="video-slide">
-            <video autoplay muted loop playsinline preload="metadata">
-                <source src="https://assets.mixkit.co/videos/preview/mixkit-woman-walking-on-a-mountain-path-4175-large.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="video-overlay">
-                <h1>Born from Hiking Trails</h1>
-                <p>Inspired by nature's resilience. Formulated for those who seek adventure and demand purity in their skincare.</p>
-                <a href="#nature" class="btn">Our Story</a>
-            </div>
+    </div>
+    <div class="image-slide">
+        <img src="./img/bg-img-4.jpg" alt="Born from Hiking Trails - Woman walking on mountain path" loading="lazy">
+        <div class="image-overlay">
+            <h1>Born from Hiking Trails</h1>
+            <p>Inspired by nature's resilience. Formulated for those who seek adventure and demand purity in their skincare.</p>
+            <a href="#nature" class="btn">Our Story</a>
         </div>
-        <div class="carousel-dots">
-            <span class="carousel-dot active" data-slide="0" aria-label="Go to slide 1"></span>
-            <span class="carousel-dot" data-slide="1" aria-label="Go to slide 2"></span>
-            <span class="carousel-dot" data-slide="2" aria-label="Go to slide 3"></span>
-            <span class="carousel-dot" data-slide="3" aria-label="Go to slide 4"></span>
-        </div>
-    </section>
+    </div>
+    <div class="carousel-dots">
+        <span class="carousel-dot active" data-slide="0" aria-label="Go to slide 1"></span>
+        <span class="carousel-dot" data-slide="1" aria-label="Go to slide 2"></span>
+        <span class="carousel-dot" data-slide="2" aria-label="Go to slide 3"></span>
+        <span class="carousel-dot" data-slide="3" aria-label="Go to slide 4"></span>
+    </div>
+</section>
 
     <!-- Trust Indicators -->
     <section class="trust-indicators">
@@ -1861,7 +1995,7 @@
         </div>
     </section>
 
-    <!-- Benefits -->
+    <!-- Benefits with Video Carousels -->
     <section class="benefits section-padding" id="benefits">
         <div class="container">
             <div class="section-title">
@@ -1871,9 +2005,28 @@
             
             <div class="benefit-item">
                 <div class="benefit-image">
-                    <video autoplay muted loop playsinline preload="metadata">
-                        <source src="https://assets.mixkit.co/videos/preview/mixkit-close-up-of-a-womans-hands-putting-cream-1563-large.mp4" type="video/mp4">
-                    </video>
+                    <div class="benefit-video-carousel">
+                        <div class="benefit-video-slide active">
+                            <video autoplay muted loop playsinline preload="metadata">
+                                <source src="https://assets.mixkit.co/videos/preview/mixkit-close-up-of-a-womans-hands-putting-cream-1563-large.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="benefit-video-slide">
+                            <video autoplay muted loop playsinline preload="metadata">
+                                <source src="https://assets.mixkit.co/videos/preview/mixkit-woman-applying-cream-on-her-skin-1562-large.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="benefit-video-slide">
+                            <video autoplay muted loop playsinline preload="metadata">
+                                <source src="https://assets.mixkit.co/videos/preview/mixkit-beautiful-woman-getting-her-face-massage-15811-large.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="benefit-video-dots">
+                            <span class="benefit-video-dot active" data-slide="0"></span>
+                            <span class="benefit-video-dot" data-slide="1"></span>
+                            <span class="benefit-video-dot" data-slide="2"></span>
+                        </div>
+                    </div>
                 </div>
                 <div class="benefit-content">
                     <h3>Deep Cellular Nourishment</h3>
@@ -1893,7 +2046,24 @@
             
             <div class="benefit-item">
                 <div class="benefit-image">
-                    <img src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Natural healing and restoration process with shea butter" loading="lazy">
+                    <div class="benefit-video-carousel">
+                        <div class="benefit-video-slide active">
+                            <img src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Natural healing and restoration" loading="lazy">
+                        </div>
+                        <div class="benefit-video-slide">
+                            <video autoplay muted loop playsinline preload="metadata">
+                                <source src="https://assets.mixkit.co/videos/preview/mixkit-hands-of-a-woman-making-a-soap-28201-large.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="benefit-video-slide">
+                            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Natural ingredients" loading="lazy">
+                        </div>
+                        <div class="benefit-video-dots">
+                            <span class="benefit-video-dot active" data-slide="0"></span>
+                            <span class="benefit-video-dot" data-slide="1"></span>
+                            <span class="benefit-video-dot" data-slide="2"></span>
+                        </div>
+                    </div>
                 </div>
                 <div class="benefit-content">
                     <h3>Natural Healing & Restoration</h3>
@@ -1968,7 +2138,7 @@
                 <div class="gallery-item" id="sheaButterGallery">
                     <div class="gallery-main">
                         <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Pure Unrefined Shea Butter from Ghana" id="sheaMain" loading="lazy">
-                        <span class="gallery-expand" onclick="openModal('shea')" aria-label="Expand view of shea butter">
+                        <span class="gallery-expand" onclick="openProductModal('shea')" aria-label="Expand view of shea butter">
                             <i class="fas fa-expand"></i>
                         </span>
                     </div>
@@ -2025,7 +2195,7 @@
                         <video autoplay muted loop playsinline preload="metadata" id="soapMain">
                             <source src="https://assets.mixkit.co/videos/preview/mixkit-soap-bubbles-on-a-dark-background-2391-large.mp4" type="video/mp4">
                         </video>
-                        <span class="gallery-expand" onclick="openModal('soap')" aria-label="Expand view of soap">
+                        <span class="gallery-expand" onclick="openProductModal('soap')" aria-label="Expand view of soap">
                             <i class="fas fa-expand"></i>
                         </span>
                     </div>
@@ -2078,6 +2248,155 @@
             </div>
         </div>
     </section>
+
+    <!-- Enhanced Product Modals -->
+    <div class="gallery-modal" id="sheaModal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeProductModal('shea')">&times;</button>
+            <div class="modal-media-gallery">
+                <div class="modal-gallery-slide active">
+                    <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Pure shea butter" loading="lazy">
+                </div>
+                <div class="modal-gallery-slide">
+                    <video autoplay muted loop playsinline preload="metadata">
+                        <source src="https://assets.mixkit.co/videos/preview/mixkit-woman-applying-cream-on-her-skin-1562-large.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="modal-gallery-slide">
+                    <img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Shea butter texture" loading="lazy">
+                </div>
+                <div class="modal-gallery-slide">
+                    <video autoplay muted loop playsinline preload="metadata">
+                        <source src="https://assets.mixkit.co/videos/preview/mixkit-close-up-of-a-womans-hands-putting-cream-1563-large.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="modal-gallery-slide">
+                    <img src="https://images.unsplash.com/photo-1560343090-f0409e92791a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Shea butter production" loading="lazy">
+                </div>
+                <button class="modal-gallery-nav modal-gallery-prev" onclick="changeModalSlide('shea', -1)">&lsaquo;</button>
+                <button class="modal-gallery-nav modal-gallery-next" onclick="changeModalSlide('shea', 1)">&rsaquo;</button>
+                <div class="modal-gallery-dots">
+                    <span class="modal-gallery-dot active" data-slide="0"></span>
+                    <span class="modal-gallery-dot" data-slide="1"></span>
+                    <span class="modal-gallery-dot" data-slide="2"></span>
+                    <span class="modal-gallery-dot" data-slide="3"></span>
+                    <span class="modal-gallery-dot" data-slide="4"></span>
+                </div>
+            </div>
+            <div class="modal-info">
+                <h3 class="modal-title">Pure Unrefined Shea Butter</h3>
+                <p class="modal-description">Wild-harvested from the shea trees of Ghana, our 100% unrefined shea butter is cold-pressed to preserve all its natural vitamins and antioxidants. Rich in vitamins A, E, and F, it provides deep hydration, reduces inflammation, and promotes skin regeneration.</p>
+                <div class="modal-features">
+                    <div class="modal-feature">
+                        <i class="fas fa-leaf"></i>
+                        <span>100% Natural & Organic</span>
+                    </div>
+                    <div class="modal-feature">
+                        <i class="fas fa-hand-holding-heart"></i>
+                        <span>Cold-Pressed Extraction</span>
+                    </div>
+                    <div class="modal-feature">
+                        <i class="fas fa-heart"></i>
+                        <span>Vitamins A, E, F Rich</span>
+                    </div>
+                    <div class="modal-feature">
+                        <i class="fas fa-mountain"></i>
+                        <span>Wild Harvested in Ghana</span>
+                    </div>
+                </div>
+                <div class="product-price">$38.00</div>
+                <div class="price-inclusive">
+                    <i class="fas fa-shipping-fast"></i>
+                    <span>Price includes free shipping & eco-packaging</span>
+                </div>
+                <div class="modal-product-actions">
+                    <div class="quantity-selector">
+                        <button class="quantity-btn minus" onclick="updateModalQuantity('shea', -1)">-</button>
+                        <input type="text" class="quantity-input" id="modalSheaQuantity" value="1" readonly>
+                        <button class="quantity-btn plus" onclick="updateModalQuantity('shea', 1)">+</button>
+                    </div>
+                    <button class="btn add-to-cart" onclick="addToCart('shea', true)">
+                        <i class="fas fa-shopping-bag"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="gallery-modal" id="soapModal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeProductModal('soap')">&times;</button>
+            <div class="modal-media-gallery">
+                <div class="modal-gallery-slide active">
+                    <video autoplay muted loop playsinline preload="metadata">
+                        <source src="https://assets.mixkit.co/videos/preview/mixkit-soap-bubbles-on-a-dark-background-2391-large.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="modal-gallery-slide">
+                    <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Natural soap bar" loading="lazy">
+                </div>
+                <div class="modal-gallery-slide">
+                    <video autoplay muted loop playsinline preload="metadata">
+                        <source src="https://assets.mixkit.co/videos/preview/mixkit-hands-of-a-woman-making-a-soap-28201-large.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="modal-gallery-slide">
+                    <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Soap ingredients" loading="lazy">
+                </div>
+                <div class="modal-gallery-slide">
+                    <video autoplay muted loop playsinline preload="metadata">
+                        <source src="https://assets.mixkit.co/videos/preview/mixkit-hand-squeezing-a-wet-bar-of-soap-52500-large.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <button class="modal-gallery-nav modal-gallery-prev" onclick="changeModalSlide('soap', -1)">&lsaquo;</button>
+                <button class="modal-gallery-nav modal-gallery-next" onclick="changeModalSlide('soap', 1)">&rsaquo;</button>
+                <div class="modal-gallery-dots">
+                    <span class="modal-gallery-dot active" data-slide="0"></span>
+                    <span class="modal-gallery-dot" data-slide="1"></span>
+                    <span class="modal-gallery-dot" data-slide="2"></span>
+                    <span class="modal-gallery-dot" data-slide="3"></span>
+                    <span class="modal-gallery-dot" data-slide="4"></span>
+                </div>
+            </div>
+            <div class="modal-info">
+                <h3 class="modal-title">Shea Butter & Oatmeal Soap</h3>
+                <p class="modal-description">Our gentle exfoliating soap combines the nourishing power of shea butter with the soothing properties of colloidal oatmeal. Perfect for sensitive skin, it cleanses without stripping natural oils while providing gentle exfoliation and deep hydration.</p>
+                <div class="modal-features">
+                    <div class="modal-feature">
+                        <i class="fas fa-hand-sparkles"></i>
+                        <span>Gentle Exfoliation</span>
+                    </div>
+                    <div class="modal-feature">
+                        <i class="fas fa-heart"></i>
+                        <span>Sensitive Skin Safe</span>
+                    </div>
+                    <div class="modal-feature">
+                        <i class="fas fa-leaf"></i>
+                        <span>Oatmeal Infused</span>
+                    </div>
+                    <div class="modal-feature">
+                        <i class="fas fa-seedling"></i>
+                        <span>Essential Oils Blend</span>
+                    </div>
+                </div>
+                <div class="product-price">$24.00</div>
+                <div class="price-inclusive">
+                    <i class="fas fa-shipping-fast"></i>
+                    <span>Price includes free shipping & eco-packaging</span>
+                </div>
+                <div class="modal-product-actions">
+                    <div class="quantity-selector">
+                        <button class="quantity-btn minus" onclick="updateModalQuantity('soap', -1)">-</button>
+                        <input type="text" class="quantity-input" id="modalSoapQuantity" value="1" readonly>
+                        <button class="quantity-btn plus" onclick="updateModalQuantity('soap', 1)">+</button>
+                    </div>
+                    <button class="btn add-to-cart" onclick="addToCart('soap', true)">
+                        <i class="fas fa-shopping-bag"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Nature Story Section -->
     <section class="nature-section" id="nature">
@@ -2202,27 +2521,13 @@
         </div>
     </footer>
 
-    <!-- ==================== COMPLETE JAVASCRIPT ==================== -->
+    <!-- ==================== ENHANCED JAVASCRIPT ==================== -->
     <script>
-        // Video Carousel with optimized performance
-        const slides = document.querySelectorAll('.video-slide');
+        // Main Image Carousel
+        const slides = document.querySelectorAll('.image-slide');
         const dots = document.querySelectorAll('.carousel-dot');
         let currentSlide = 0;
         let slideInterval;
-
-        // Pause all videos except active one
-        function manageVideos() {
-            slides.forEach((slide, index) => {
-                const video = slide.querySelector('video');
-                if (video) {
-                    if (index === currentSlide) {
-                        video.play().catch(e => console.log("Video autoplay prevented:", e));
-                    } else {
-                        video.pause();
-                    }
-                }
-            });
-        }
 
         function showSlide(n) {
             slides.forEach(slide => slide.classList.remove('active'));
@@ -2232,8 +2537,6 @@
             
             slides[currentSlide].classList.add('active');
             dots[currentSlide].classList.add('active');
-            
-            manageVideos();
         }
 
         function startCarousel() {
@@ -2253,6 +2556,110 @@
                 stopCarousel();
                 showSlide(index);
                 startCarousel();
+            });
+        });
+
+        // Benefit Video Carousels
+        const benefitVideoCarousels = document.querySelectorAll('.benefit-video-carousel');
+        
+        benefitVideoCarousels.forEach(carousel => {
+            const videoSlides = carousel.querySelectorAll('.benefit-video-slide');
+            const videoDots = carousel.querySelectorAll('.benefit-video-dot');
+            let currentVideoSlide = 0;
+            
+            function showVideoSlide(carousel, n) {
+                videoSlides.forEach(slide => slide.classList.remove('active'));
+                videoDots.forEach(dot => dot.classList.remove('active'));
+                
+                currentVideoSlide = (n + videoSlides.length) % videoSlides.length;
+                
+                videoSlides[currentVideoSlide].classList.add('active');
+                videoDots[currentVideoSlide].classList.add('active');
+            }
+            
+            videoDots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    showVideoSlide(carousel, index);
+                });
+            });
+            
+            // Auto-rotate benefit videos
+            setInterval(() => {
+                showVideoSlide(carousel, currentVideoSlide + 1);
+            }, 5000);
+        });
+
+        // Enhanced Product Modals
+        let currentModalSlide = {
+            shea: 0,
+            soap: 0
+        };
+
+        function openProductModal(product) {
+            const modal = document.getElementById(`${product}Modal`);
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            currentModalSlide[product] = 0;
+            showModalSlide(product, 0);
+        }
+
+        function closeProductModal(product) {
+            const modal = document.getElementById(`${product}Modal`);
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function changeModalSlide(product, direction) {
+            const modal = document.getElementById(`${product}Modal`);
+            const slides = modal.querySelectorAll('.modal-gallery-slide');
+            const dots = modal.querySelectorAll('.modal-gallery-dot');
+            
+            let newSlide = currentModalSlide[product] + direction;
+            if (newSlide < 0) newSlide = slides.length - 1;
+            if (newSlide >= slides.length) newSlide = 0;
+            
+            showModalSlide(product, newSlide);
+        }
+
+        function showModalSlide(product, index) {
+            const modal = document.getElementById(`${product}Modal`);
+            const slides = modal.querySelectorAll('.modal-gallery-slide');
+            const dots = modal.querySelectorAll('.modal-gallery-dot');
+            
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+            
+            currentModalSlide[product] = index;
+        }
+
+        // Initialize modal dots
+        document.querySelectorAll('.modal-gallery-dot').forEach((dot, index) => {
+            dot.addEventListener('click', function() {
+                const product = this.closest('.gallery-modal').id.replace('Modal', '');
+                showModalSlide(product, index);
+            });
+        });
+
+        // Close modals with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.gallery-modal').forEach(modal => {
+                    modal.classList.remove('active');
+                });
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Close modal when clicking outside
+        document.querySelectorAll('.gallery-modal').forEach(modal => {
+            modal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    const product = this.id.replace('Modal', '');
+                    closeProductModal(product);
+                }
             });
         });
 
@@ -2326,13 +2733,6 @@
         // Close when clicking outside the nav
         mobileNav.addEventListener('click', function(e) {
             if (e.target === mobileNav) {
-                closeMobileNav();
-            }
-        });
-
-        // Close with Escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && mobileNav.classList.contains('active')) {
                 closeMobileNav();
             }
         });
@@ -2419,7 +2819,7 @@
 
         lazyVideos.forEach(video => {
             // Only observe videos not in carousel
-            if (!video.closest('.video-carousel')) {
+            if (!video.closest('.image-carousel')) {
                 videoObserver.observe(video);
             }
         });
@@ -2518,7 +2918,7 @@
                 btn.innerHTML = originalHTML;
                 btn.style.background = '';
                 if (fromModal) {
-                    closeModal(product);
+                    closeProductModal(product);
                 }
             }, 1500);
         }
@@ -2555,28 +2955,6 @@
                 mainElement.innerHTML = `<img src="${mediaUrl}" alt="${product}" loading="lazy">`;
             }
         }
-
-        // Modal functions
-        function openModal(product) {
-            const modal = document.getElementById(`${product}Modal`);
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeModal(product) {
-            const modal = document.getElementById(`${product}Modal`);
-            modal.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                document.querySelectorAll('.gallery-modal').forEach(modal => {
-                    modal.classList.remove('active');
-                });
-                document.body.style.overflow = 'auto';
-            }
-        });
 
         // Newsletter subscription
         function subscribeNewsletter(e) {
